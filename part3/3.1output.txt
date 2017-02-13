@@ -1,0 +1,83 @@
+PART 3.1: Classification performance on test data
+Zi Mo Su (1001575048)
+
+=======================================================================================================================
+COMMANDS USED:
+=======================================================================================================================
+To get the performance:
+	
+	java -cp WEKA/weka.jar *classifier* -t train.arff -T test.arff -o
+	
+	(where *classifier* is the classifier desired)
+
+
+=======================================================================================================================
+CONCLUSIONS:
+=======================================================================================================================
+The highest performance is obtained through using the Naive Bayes classifier as shown below.
+
+
+=======================================================================================================================
+SVMs:
+=======================================================================================================================
+=== Error on test data ===
+
+Correctly Classified Instances         182               50.6964 %
+Incorrectly Classified Instances       177               49.3036 %
+Kappa statistic                          0.0121
+Mean absolute error                      0.493 
+Root mean squared error                  0.7022
+Relative absolute error                 98.6072 %
+Root relative squared error            140.4331 %
+Total Number of Instances              359     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  78  99 |   a = 0
+  78 104 |   b = 4
+
+
+=======================================================================================================================
+Naive Bayes:
+=======================================================================================================================
+=== Error on test data ===
+
+Correctly Classified Instances         190               52.9248 %
+Incorrectly Classified Instances       169               47.0752 %
+Kappa statistic                          0.0546
+Mean absolute error                      0.4872
+Root mean squared error                  0.5454
+Relative absolute error                 97.4321 %
+Root relative squared error            109.0883 %
+Total Number of Instances              359     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  67 110 |   a = 0
+  59 123 |   b = 4
+
+
+=======================================================================================================================
+Decision Trees:
+=======================================================================================================================
+=== Error on test data ===
+
+Correctly Classified Instances         186               51.8106 %
+Incorrectly Classified Instances       173               48.1894 %
+Kappa statistic                          0.0349
+Mean absolute error                      0.4872
+Root mean squared error                  0.5857
+Relative absolute error                 97.4345 %
+Root relative squared error            117.131  %
+Total Number of Instances              359     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  83  94 |   a = 0
+  79 103 |   b = 4

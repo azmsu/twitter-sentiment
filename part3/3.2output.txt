@@ -1,0 +1,52 @@
+PART 3.2: Amount of training data vs. classification performance (on Naive Bayes)
+Zi Mo Su (1001575048)
+
+=======================================================================================================================
+COMMANDS USED:
+=======================================================================================================================
+To create the training set:
+
+	python buildarff.py train.twt *output file* *max_tweets*
+	
+	(where *output file* is the name of the .arff output file (format used was '*max_tweets*train.arff') and
+	*max_tweets* is the maximum number of tweets taken per class)
+
+To get the performance:
+	
+	java -cp WEKA/weka.jar weka.classifiers.bayes.NaiveBayes -t *max_tweets*train.arff -T test.arff -o
+
+
+=======================================================================================================================
+CONCLUSIONS:
+=======================================================================================================================
+The general trend shows an increase in performance for the test set given an increase in training data size. This is 
+expected as more training data leads to a greater pool of data to derive classification patterns on. Having too little 
+data makes the training set not indicative enough to classify the test data.
+
+
+=======================================================================================================================
+RESULTS:
+=======================================================================================================================
+training data amount | performance (test set)
+_____________________|_______________________
+	500	     |		48.7465%
+	1000	     |		50.1393%
+	1500	     |		49.8607%
+	2000	     |		52.9248%
+	2500	     |		52.3677%
+	3000	     |		52.6462%
+	3500	     |		52.0891%
+	4000	     |		52.6462%
+	4500	     |		53.2033%
+	5000	     |		53.4819%
+	5500	     |		53.7604%
+	6000	     |		52.9248%
+	6500	     |		52.6462%
+	7000	     |		52.6462%
+	7500	     |		52.3677%
+	8000	     |		52.6462%
+	8500	     |		52.9248%
+	9000	     |		52.6462%
+	9500	     |		52.9248%
+	10000	     |		52.9248%
+
